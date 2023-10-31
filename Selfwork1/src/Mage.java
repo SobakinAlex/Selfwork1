@@ -3,7 +3,7 @@ public class Mage extends Unit {
 
     public Mage(int hp, String name, int mana) {
         super(hp, name);
-        if (mana <= 0){
+        if (mana <= 0) {
             System.out.println("У вас нет маны");
         } else {
             this.mana = mana;
@@ -11,10 +11,15 @@ public class Mage extends Unit {
     }
 
 
+    public Mage(Unit a, Mage b) {
+        super(a);
+        this.mana = b.mana;
+    }
+
     @Override
-    public void printInfo(){
+    public void printInfo() {
         super.printInfo();
-            System.out.println("Маны" + ": " + mana);
+        System.out.println("Маны" + ": " + mana);
     }
 
 }
